@@ -1,11 +1,11 @@
 var dir = "doodles/";
 
-var fileextension = ".JPG";
 $(document).ready(function() {
   $.ajax({
     url:dir, 
     success: function(data) {
       $(data).find("a").attr("href", function(i, val) {
+        console.log(val);
         if (val.match(/\.(jpe?g|png|gif$/) ) {
           $("body").append("<img src='" + folder + val + "'>");
         }
