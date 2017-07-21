@@ -6,6 +6,9 @@ $(document).ready(function() {
       $.get(record, function(data, status) {
         var images = data.split(/\n/);
         for (image of images) {
+          if (image.length == 0) {
+            break;
+          }
           $("body").append("<a href='" + dir + image + "'><img src='" + dir + image + "' width='100'></a>");
         }
       });
